@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+  <script src="https://rawgit.com/kawanet/msgpack-lite/master/dist/msgpack.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+  <!-- <script type="text/javascript" src="./js/h264-converter/main_script.js"></script> -->
+  <!-- <script type="text/javascript" src="./js/pcm-player-master/pcm-player.js"></script> -->
+  <script type="text/javascript" src="./js/jmuxer-master/dist/jmuxer.min.js"></script>
+  <script>
+    // default path is on the same directory as this HTML
+    Mp3LameEncoderConfig = {
+      memoryInitializerPrefixURL: "./js/mp3-lame-encoder-js-master/lib/"   // must end with slash
+      // => changed to javascripts/Mp3LameEncoder.min.js.mem
+    };  
+  </script>
+  <script type="text/javascript" src="./js/mp3-lame-encoder-js-master/lib/Mp3LameEncoder.js"></script>
+
+  <script type="module" src="js/main.js"></script>
+</head>
+
+<body>
+  <div>
+    <button id="btnconnect">連線</button>
+  </div>
+  <video id="player" width="640" height="304" autoplay controls></video>
+</body>
+
+</html>
