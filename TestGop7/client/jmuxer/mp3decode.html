@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+  <script src="https://rawgit.com/kawanet/msgpack-lite/master/dist/msgpack.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+  <!-- <script type="text/javascript" src="./js/h264-converter/main_script.js"></script> -->
+  <!-- <script type="text/javascript" src="./js/pcm-player-master/pcm-player.js"></script> -->
+  <script type="text/javascript" src="./js/jmuxer-master/dist/jmuxer.min.js"></script>
+  <script>
+    // default path is on the same directory as this HTML
+    Mp3LameEncoderConfig = {
+      memoryInitializerPrefixURL: "./js/mp3-lame-encoder-js-master/lib/"   // must end with slash
+      // => changed to javascripts/Mp3LameEncoder.min.js.mem
+    }; 
+  </script>
+  <script type="text/javascript" src="./js/mp3-lame-encoder-js-master/lib/Mp3LameEncoder.js"></script>
+
+  <script type="module" src="js/main.js"></script>
+</head>
+
+<body>
+  <span>
+    <button id="btnconnect0">連線0</button>
+    <video id="player0" width="640" height="304" autoplay controls></video>
+  </span>
+
+  <span>
+    <button id="btnconnect1">連線1</button>
+    <video id="player1" width="640" height="304" autoplay controls></video>
+  </span>
+
+  <span>
+    <button id="btnconnect2">連線2</button>
+    <video id="player2" width="640" height="304" autoplay controls></video>
+  </span>
+
+  <span>
+    <button id="btnconnect3">連線3</button>
+    <video id="player3" width="640" height="304" autoplay controls></video>
+  </span>
+
+  <span>
+    <button id="btnconnect4">連線4</button>
+    <video id="player4" width="640" height="304" autoplay controls></video>
+  </span>
+
+  <span>
+    <button id="btnconnect5">連線5</button>
+    <video id="player5" width="640" height="304" autoplay controls></video>
+  </span>
+
+  <span>
+    <button id="btnconnect6">連線6</button>
+    <video id="player6" width="640" height="304" autoplay controls></video>
+  </span>
+
+  <span>
+    <button id="btnconnect7">連線7</button>
+    <video id="player7" width="640" height="304" autoplay controls></video>
+  </span>
+
+</body>
+
+</html>

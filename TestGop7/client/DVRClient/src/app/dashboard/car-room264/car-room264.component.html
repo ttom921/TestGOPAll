@@ -1,0 +1,13 @@
+<!-- <div class="playervideo">
+  <video class="jmuxerplayer" id="{{title}}" autoplay controls></video>
+</div> -->
+<mat-grid-tile-header>
+  <span>{{title}}</span>
+  <div id="inputdiv">
+
+    <input type="file" multiple="multiple" id="file" #file (change)="Upload(file)">
+    <mat-checkbox mat-icon-button [(ngModel)]="isShowing">
+      <mat-icon class="material-icons md-24" fontSet="fa" fontIcon="fa-gamepad"></mat-icon>
+    </mat-checkbox>
+  </div>
+</mat-grid-tile-header>
