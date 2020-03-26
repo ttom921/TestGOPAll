@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+        content="jMuxer - a simple javascript mp4 muxer for non-standard streaming communications protocol">
+    <meta name="keywords" content="h264 player, mp4 player, mse, mp4 muxing, jmuxer, aac player">
+    <title>JMuxer demo</title>
+</head>
+
+<body>
+    <span id="container">
+        <video width="400px;" controls autoplay poster="images/loader-thumb.jpg" id="player0"></video>
+    </span>
+    <span>
+        <video width="400px;" controls autoplay poster="images/loader-thumb.jpg" id="player1"></video>
+    </span>
+    <span>
+        <video width="400px;" controls autoplay poster="images/loader-thumb.jpg" id="player2"></video>
+    </span>
+    <span>
+        <video width="400px;" controls autoplay poster="images/loader-thumb.jpg" id="player3"></video>
+    </span>
+    <span>
+        <video width="400px;" controls autoplay poster="images/loader-thumb.jpg" id="player4"></video>
+    </span>
+    <span>
+        <video width="400px;" controls autoplay poster="images/loader-thumb.jpg" id="player5"></video>
+    </span>
+    <span>
+        <video width="400px;" controls autoplay poster="images/loader-thumb.jpg" id="player6"></video>
+    </span>
+    <span>
+        <video width="400px;" controls autoplay poster="images/loader-thumb.jpg" id="player7"></video>
+    </span>
+
+    <script>
+        var socketURL = 'wss://jmuxer-demo-server.herokuapp.com';
+        var jmuxer0 = null;
+        var jmuxer1 = null;
+        var jmuxer2 = null;
+        var jmuxer3 = null;
+        var jmuxer4 = null;
+        var jmuxer5 = null;
+        var jmuxer6 = null;
+        var jmuxer7 = null;
+        function parse(data) {
+            var input = new Uint8Array(data),
+                dv = new DataView(input.buffer),
+                duration,
+                audioLength,
+                audio,
+                video;
+
+            duration = dv.getUint16(0, true);
+            audioLength = dv.getUint16(2, true);
+            audio = input.subarray(4, (audioLength + 4));
+            video = input.subarray(audioLength + 4);
+
+            return {
+                audio: audio,
+                video: video,
+                duration: duration
+            };
+        }
+
+        window.onload = function () {
+            jmuxer0 = new JMuxer({
+                node: 'player0',
+                debug: false
+            });
+            let ws0 = new WebSocket(socketURL);
+            ws0.binaryType = 'arraybuffer';
+            ws0.addEventListener('message', function (event) {
+                //console.log("message:ws0");
+                let data = parse(event.data);
+                jmuxer0.feed(data);
+            });
+
+            jmuxer1 = new JMuxer({
+                node: 'player1',
+                debug: false
+            });
+            let ws1 = new WebSocket(socketURL);
+            ws1.binaryType = 'arraybuffer';
+            ws1.addEventListener('message', function (event) {
+                //console.log("message:ws1");
+                let data = parse(event.data);
+                jmuxer1.feed(data);
+            });
+
+            jmuxer2 = new JMuxer({
+                node: 'player2',
+                debug: false
+            });
+            let ws2 = new WebSocket(socketURL);
+            ws2.binaryType = 'arraybuffer';
+            ws2.addEventListener('message', function (event) {
+                //console.log("message:ws2");
+                let data = parse(event.data);
+                jmuxer2.feed(data);
+            });
+
+            jmuxer3 = new JMuxer({
+                node: 'player3',
+                debug: false
+            });
+            let ws3 = new WebSocket(socketURL);
+            ws3.binaryType = 'arraybuffer';
+            ws3.addEventListener('message', function (event) {
+                //console.log("message:ws3");
+                let data = parse(event.data);
+                jmuxer3.feed(data);
+            });
+
+            jmuxer4 = new JMuxer({
+                node: 'player4',
+                debug: false
+            });
+            let ws4 = new WebSocket(socketURL);
+            ws4.binaryType = 'arraybuffer';
+            ws4.addEventListener('message', function (event) {
+                //console.log("message:ws4");
+                let data = parse(event.data);
+                jmuxer4.feed(data);
+            });
+
+            jmuxer5 = new JMuxer({
+                node: 'player5',
+                debug: false
+            });
+            let ws5 = new WebSocket(socketURL);
+            ws5.binaryType = 'arraybuffer';
+            ws5.addEventListener('message', function (event) {
+                //console.log("message:ws5");
+                let data = parse(event.data);
+                jmuxer5.feed(data);
+            });
+            //---------------------------------
+            jmuxer6 = new JMuxer({
+                node: 'player6',
+                debug: false
+            });
+            let ws6 = new WebSocket(socketURL);
+            ws6.binaryType = 'arraybuffer';
+            ws6.addEventListener('message', function (event) {
+                //console.log("message:ws6");
+                let data = parse(event.data);
+                jmuxer6.feed(data);
+            });
+            //---------------------------------
+            jmuxer7 = new JMuxer({
+                node: 'player7',
+                debug: false
+            });
+            let ws7 = new WebSocket(socketURL);
+            ws7.binaryType = 'arraybuffer';
+            ws7.addEventListener('message', function (event) {
+                //console.log("message:ws7");
+                let data = parse(event.data);
+                jmuxer7.feed(data);
+            });
+
+        }   
+    </script>
+    <script type="text/javascript" src="jmuxer.min.js"></script>
+</body>
+
+</html>

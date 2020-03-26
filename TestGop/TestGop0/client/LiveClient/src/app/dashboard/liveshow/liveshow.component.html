@@ -1,0 +1,50 @@
+<!-- <p>
+  <button mat-raised-button color="primary" (click)="GetLiveShow()">取得車牌</button>
+  <mat-list-item *ngFor="let ns of carnamespacelst ">
+
+    <p>{{ ns }}</p>
+    <button mat-icon-button (click)="joinNameSpace(ns)">
+      <mat-icon>add</mat-icon>
+    </button>
+    <mat-divider></mat-divider>
+    <button mat-icon-button style="position:absolute;right:0px;" (click)="deleteNameSpace(ns)">
+      <mat-icon>close</mat-icon>
+    </button>
+
+
+  </mat-list-item>
+</p> -->
+<div>
+  <button mat-raised-button color="primary" (click)="GetCarNameSpace()">取得車牌</button>
+
+  <mat-form-field>
+    <mat-label>選擇車牌</mat-label>
+    <mat-select [(value)]="selected">
+      <mat-option *ngFor="let ns of carnamespacelst" value="{{ns}}">
+        {{ns}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button mat-icon-button color="primary" [disabled]="selected ===''" (click)="joinNameSpace(selected)">
+    <mat-icon>thumb_up</mat-icon>
+  </button> |
+  <span>
+    <input placeholder="channle" [(ngModel)]="channle" name="channle" />
+
+    <input placeholder="cmdmsg" [(ngModel)]="cmdmsg" name="cmdmsg" />
+
+    <button mat-icon-button color="primary" [disabled]="channle ===''" (click)="SendCmdMessage()">
+      <mat-icon>thumb_up</mat-icon>
+    </button> |
+  </span>
+
+  <!-- <button mat-icon-button color="primary" [disabled]="selected ===''" (click)="joinNameSpace(selected)">
+    <mat-icon fontSet="fa" fontIcon="fa-video"></mat-icon>
+  </button> -->
+</div>
+<div>
+  <span *ngFor="let item of channels">
+    <app-car-room264 [title]="item" [socketiourl]="connecturl" (ChannleEvent)="OnChannelEvent($event)">
+    </app-car-room264>
+  </span>
+</div>

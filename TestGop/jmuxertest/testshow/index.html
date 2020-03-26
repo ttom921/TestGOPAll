@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+        content="jMuxer - a simple javascript mp4 muxer for non-standard streaming communications protocol">
+    <meta name="keywords" content="h264 player, mp4 player, mse, mp4 muxing, jmuxer, aac player">
+    <title>JMuxer demo</title>
+</head>
+
+<body>
+    <span>
+        <video width="400" controls autoplay poster="images/loader-thumb.jpg" id="player0"></video>
+    </span>
+    <span>
+        <video width="400" controls autoplay poster="images/loader-thumb.jpg" id="player1"></video>
+    </span>
+    <span>
+        <video width="400" controls autoplay poster="images/loader-thumb.jpg" id="player2"></video>
+    </span>
+    <span>
+        <video width="400" controls autoplay poster="images/loader-thumb.jpg" id="player3"></video>
+    </span>
+    <span>
+        <video width="400" controls autoplay poster="images/loader-thumb.jpg" id="player4"></video>
+    </span>
+    <span>
+        <video width="400" controls autoplay poster="images/loader-thumb.jpg" id="player5"></video>
+    </span>
+    <span>
+        <video width="400" controls autoplay poster="images/loader-thumb.jpg" id="player6"></video>
+    </span>
+    <span>
+        <video width="400" controls autoplay poster="images/loader-thumb.jpg" id="player7"></video>
+    </span>
+    <script>
+        var socketURL = 'ws://localhost:8080';
+        //var socketURL = 'ws://172.18.2.57:8080';
+        var jmuxer0 = null;
+        var jmuxer1 = null;
+        var jmuxer2 = null;
+        var jmuxer3 = null;
+        var jmuxer4 = null;
+        var jmuxer5 = null;
+        var jmuxer6 = null;
+        var jmuxer7 = null;
+        window.onload = function () {
+            //-----------------------------
+            jmuxer0 = new JMuxer({
+                node: 'player0',
+                mode: 'video',
+                flushingTime: 1000,
+                fps: 30,
+                //debug: true
+            });
+
+            var ws0 = new WebSocket(socketURL);
+            ws0.binaryType = 'arraybuffer';
+            ws0.addEventListener('message', function (event) {
+                jmuxer0.feed({
+                    video: new Uint8Array(event.data)
+                });
+            });
+
+            ws0.addEventListener('error', function (e) {
+                console.log('Socket Error');
+            });
+            //-----------------------------
+            jmuxer1 = new JMuxer({
+                node: 'player1',
+                mode: 'video',
+                flushingTime: 1000,
+                fps: 30,
+                //debug: true
+            });
+
+            var ws1 = new WebSocket(socketURL);
+            ws1.binaryType = 'arraybuffer';
+            ws1.addEventListener('message', function (event) {
+                jmuxer1.feed({
+                    video: new Uint8Array(event.data)
+                });
+            });
+
+            ws1.addEventListener('error', function (e) {
+                console.log('Socket Error');
+            });
+            //-----------------------------
+            jmuxer2 = new JMuxer({
+                node: 'player2',
+                mode: 'video',
+                flushingTime: 1000,
+                fps: 30,
+                //debug: true
+            });
+
+            var ws2 = new WebSocket(socketURL);
+            ws2.binaryType = 'arraybuffer';
+            ws2.addEventListener('message', function (event) {
+                jmuxer2.feed({
+                    video: new Uint8Array(event.data)
+                });
+            });
+
+            ws2.addEventListener('error', function (e) {
+                console.log('Socket Error');
+            });
+            //-----------------------------
+            jmuxer3 = new JMuxer({
+                node: 'player3',
+                mode: 'video',
+                flushingTime: 1000,
+                fps: 30,
+                //debug: true
+            });
+
+            var ws3 = new WebSocket(socketURL);
+            ws3.binaryType = 'arraybuffer';
+            ws3.addEventListener('message', function (event) {
+                jmuxer3.feed({
+                    video: new Uint8Array(event.data)
+                });
+            });
+
+            ws3.addEventListener('error', function (e) {
+                console.log('Socket Error');
+            });
+            //-----------------------------
+            jmuxer4 = new JMuxer({
+                node: 'player4',
+                mode: 'video',
+                flushingTime: 1000,
+                fps: 30,
+                //debug: true
+            });
+
+            var ws4 = new WebSocket(socketURL);
+            ws4.binaryType = 'arraybuffer';
+            ws4.addEventListener('message', function (event) {
+                jmuxer4.feed({
+                    video: new Uint8Array(event.data)
+                });
+            });
+
+            ws4.addEventListener('error', function (e) {
+                console.log('Socket Error');
+            });
+            //-----------------------------
+            jmuxer5 = new JMuxer({
+                node: 'player5',
+                mode: 'video',
+                flushingTime: 1000,
+                fps: 30,
+                //debug: true
+            });
+
+            var ws5 = new WebSocket(socketURL);
+            ws5.binaryType = 'arraybuffer';
+            ws5.addEventListener('message', function (event) {
+                jmuxer5.feed({
+                    video: new Uint8Array(event.data)
+                });
+            });
+
+            ws5.addEventListener('error', function (e) {
+                console.log('Socket Error');
+            });
+            //-----------------------------
+            jmuxer6 = new JMuxer({
+                node: 'player6',
+                mode: 'video',
+                flushingTime: 1000,
+                fps: 30,
+                //debug: true
+            });
+
+            var ws6 = new WebSocket(socketURL);
+            ws6.binaryType = 'arraybuffer';
+            ws6.addEventListener('message', function (event) {
+                jmuxer6.feed({
+                    video: new Uint8Array(event.data)
+                });
+            });
+
+            ws6.addEventListener('error', function (e) {
+                console.log('Socket Error');
+            });
+            //-----------------------------
+            jmuxer7 = new JMuxer({
+                node: 'player7',
+                mode: 'video',
+                flushingTime: 1000,
+                fps: 30,
+                //debug: true
+            });
+
+            var ws7 = new WebSocket(socketURL);
+            ws7.binaryType = 'arraybuffer';
+            ws7.addEventListener('message', function (event) {
+                jmuxer7.feed({
+                    video: new Uint8Array(event.data)
+                });
+            });
+
+            ws7.addEventListener('error', function (e) {
+                console.log('Socket Error');
+            });
+        }
+
+    </script>
+    <script type="text/javascript" src="jmuxer.min.js"></script>
+</body>
+
+</html>

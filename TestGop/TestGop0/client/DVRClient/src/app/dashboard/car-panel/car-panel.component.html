@@ -1,0 +1,25 @@
+<div>
+  {{currCar.username}}
+  <button mat-icon-button color="primary" [disabled]=" currCar===null " (click)="joinNameSpace(currCar.username)">
+    <mat-icon>thumb_up</mat-icon>
+  </button>
+  |
+
+</div>
+<!-- <div>
+  <mat-grid-list cols="4" rowHeight="200px" gutterSize="0.5em">
+    <mat-grid-tile *ngFor="let item of channels">
+
+      <app-car-room [title]="item" [socketiourl]="connecturl"></app-car-room>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div> -->
+
+<div>
+  <mat-grid-list cols="4" rowHeight="240px" gutterSize="0.1em">
+    <mat-grid-tile *ngFor="let item of channels">
+
+      <app-car-room264 [title]="item" [socketiourl]="connecturl"></app-car-room264>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
