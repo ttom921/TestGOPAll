@@ -1,0 +1,55 @@
+<div>
+  <mat-label>選擇服務器</mat-label>
+  <mat-radio-group [(ngModel)]="selectedip">
+    <mat-radio-button id="{{server}}" *ngFor="let server of serverips" [value]="server">
+      {{server}}
+    </mat-radio-button>
+  </mat-radio-group>
+  <div>
+    你選的服務器: {{selectedip}}
+  </div>
+
+</div>
+<hr>
+<div>
+  <mat-label>選擇車牌</mat-label>
+  <mat-radio-group [(ngModel)]="selectedcar">
+    <mat-radio-button id="{{car}}" *ngFor="let car of cars" [value]="car">
+      {{car}}
+    </mat-radio-button>
+  </mat-radio-group>
+  <p>你選的車牌: {{selectedcar}}</p>
+</div>
+<hr>
+<button mat-icon-button color="primary" (click)="getChannellist()">
+  <mat-icon>thumb_up</mat-icon>
+</button>
+<hr>
+<!-- ['頻道', 'sockid', 'action']; -->
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- 頻道 Column -->
+  <ng-container matColumnDef="chname">
+    <th mat-header-cell *matHeaderCellDef> 頻道 </th>
+    <td mat-cell *matCellDef="let element"> {{element.chname}} </td>
+  </ng-container>
+
+  <!-- sockid Column -->
+  <ng-container matColumnDef="sid">
+    <th mat-header-cell *matHeaderCellDef> sockid </th>
+    <td mat-cell *matCellDef="let element"> {{element.sid}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="action">
+    <th mat-header-cell *matHeaderCellDef> Action </th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-raised-button (click)="btnClick(element)">Edit</button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

@@ -1,0 +1,31 @@
+<div>
+  <mat-label>選擇服務器</mat-label>
+  <mat-radio-group [(ngModel)]="selectedip">
+    <mat-radio-button id="{{server}}" *ngFor="let server of serverips" [value]="server">
+      {{server}}
+    </mat-radio-button>
+  </mat-radio-group>
+  <div>
+    你選的服務器: {{selectedip}}
+  </div>
+
+</div>
+<hr>
+<div>
+  <mat-label>選擇車牌</mat-label>
+  <mat-radio-group [(ngModel)]="selectedcar">
+    <mat-radio-button id="{{car}}" *ngFor="let car of cars" [value]="car">
+      {{car}}
+    </mat-radio-button>
+  </mat-radio-group>
+  <p>你選的車牌: {{selectedcar}}</p>
+</div>
+<hr>
+<button mat-icon-button color="primary" (click)="startwork()">
+  <mat-icon>thumb_up</mat-icon>
+</button>
+<hr>
+<span *ngFor="let item of carRooms">
+  {{item.title}}
+  <!-- <app-car-room264 [title]="item" [socketiourl]="connecturl"></app-car-room264> -->
+</span>
