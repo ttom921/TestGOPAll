@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>LiveClient</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://rawgit.com/kawanet/msgpack-lite/master/dist/msgpack.min.js"></script>
+  <script type="text/javascript" src="./assets/js/jmuxer-master/dist/jmuxer.min.js"></script>
+  <script>
+    // default path is on the same directory as this HTML
+    Mp3LameEncoderConfig = {
+      memoryInitializerPrefixURL: "./assets/js/mp3-lame-encoder-js-master/lib/"   // must end with slash
+      // => changed to javascripts/Mp3LameEncoder.min.js.mem
+    };
+  </script>
+  <script type="text/javascript" src="./assets/js/mp3-lame-encoder-js-master/lib/Mp3LameEncoder.js"></script>
+  <script type="text/javascript" src="./assets/js/hi-player.js"></script>
+
+</head>
+
+<body>
+  <app-root></app-root>
+</body>
+
+</html>

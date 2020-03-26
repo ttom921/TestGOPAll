@@ -1,0 +1,81 @@
+<div>
+  <mat-label>選擇服務器</mat-label>
+  <mat-radio-group [(ngModel)]="selserverip">
+    <mat-radio-button id="{{server}}" *ngFor="let server of serverips" [value]="server">
+      {{server}}
+    </mat-radio-button>
+  </mat-radio-group>
+  <div>
+    你選的服務器:: {{selserverip}}
+  </div>
+
+</div>
+<hr>
+<div>
+  <mat-label>選擇車牌</mat-label>
+  <mat-radio-group [(ngModel)]="selected">
+    <mat-radio-button id="{{car}}" *ngFor="let car of cars" [value]="car">
+      {{car}}
+    </mat-radio-button>
+  </mat-radio-group>
+  <p>你選的車牌: {{selected}}</p>
+</div>
+<hr>
+<!--
+<div>
+  <mat-label>選擇頻道</mat-label>
+  <mat-radio-group [(ngModel)]="selectedchannel">
+    <mat-radio-button id="{{channel}}" *ngFor="let channel of channels" [value]="channel">
+      {{channel}}
+    </mat-radio-button>
+  </mat-radio-group>
+  <p>你選的頻道: {{selectedchannel}}</p>
+</div>
+<hr>
+<p>選擇資料夾: {{foldername}}</p>
+<div id="container">
+
+  <input type="file" id="file_input" name="file_input_folder[]" multiple webkitdirectory="" mozdirectory="true"
+    directory="" (change)="changeListener($event)" />
+  <mat-progress-spinner #spproc [value]="progressbarValue" [diameter]="diameter"></mat-progress-spinner>
+</div>
+<hr>
+ <button #vcbtnstart mat-raised-button color="primary" disabled="true" (click)="start()">開始</button>
+<app-car-room264 #cr264 [title]="selectedchannel" [socketiourl]="connecturl"></app-car-room264> -->
+
+<hr>
+<div class="DVRList">
+  <div class="DVRList__item">
+    <app-dvrcar [title]="channels[0]" [carname]="selected" [serverip]="selserverip" [serverport]="serverport">
+    </app-dvrcar>
+  </div>
+  <div class="DVRList__item">
+    <app-dvrcar [title]="channels[1]" [carname]="selected" [serverip]="selserverip" [serverport]="serverport">
+    </app-dvrcar>
+  </div>
+  <div class="DVRList__item">
+    <app-dvrcar [title]="channels[2]" [carname]="selected" [serverip]="selserverip" [serverport]="serverport">
+    </app-dvrcar>
+  </div>
+  <div class="DVRList__item">
+    <app-dvrcar [title]="channels[3]" [carname]="selected" [serverip]="selserverip" [serverport]="serverport">
+    </app-dvrcar>
+  </div>
+  <div class="DVRList__item">
+    <app-dvrcar [title]="channels[4]" [carname]="selected" [serverip]="selserverip" [serverport]="serverport">
+    </app-dvrcar>
+  </div>
+  <div class="DVRList__item">
+    <app-dvrcar [title]="channels[5]" [carname]="selected" [serverip]="selserverip" [serverport]="serverport">
+    </app-dvrcar>
+  </div>
+  <div class="DVRList__item">
+    <app-dvrcar [title]="channels[6]" [carname]="selected" [serverip]="selserverip" [serverport]="serverport">
+    </app-dvrcar>
+  </div>
+  <div class="DVRList__item">
+    <app-dvrcar [title]="channels[7]" [carname]="selected" [serverip]="selserverip" [serverport]="serverport">
+    </app-dvrcar>
+  </div>
+
+</div>

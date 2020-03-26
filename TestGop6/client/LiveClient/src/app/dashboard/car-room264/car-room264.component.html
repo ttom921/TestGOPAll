@@ -1,0 +1,7 @@
+<span>
+  頻道:{{title}}
+  <button mat-raised-button color="primary" (click)="start()">連線</button>
+  <mat-checkbox color='primary' [(ngModel)]='isChecked'> 看影像</mat-checkbox>
+</span>
+
+<video id="v{{title}}" autoplay controls></video>

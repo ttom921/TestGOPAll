@@ -1,0 +1,8 @@
+<p>{{title}}</p>
+<p>選擇資料夾: {{foldername}}</p>
+<div id="container">
+  <input type="file" id="file_input" name="file_input_folder[]" multiple webkitdirectory="" mozdirectory="true"
+    directory="" (change)="changeListener($event)" />
+  <mat-progress-spinner #spproc [value]="progressbarValue" [diameter]="diameter"></mat-progress-spinner>
+  <button #vcbtnstart mat-raised-button color="primary" disabled="true" (click)="start()">開始</button>
+</div>
