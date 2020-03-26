@@ -1,0 +1,18 @@
+<div class="imgshow">
+  <img id="photoImage" #photoImage class="clsimage" />
+
+</div>
+<mat-grid-tile-header>
+  <span>{{title}}</span>
+  <div id="inputdiv">
+
+    <input type="file" multiple="multiple" id="file" #file (change)="Upload(file)">
+    <mat-checkbox mat-icon-button [(ngModel)]="isShowing">
+      <mat-icon class="material-icons md-24" fontSet="fa" fontIcon="fa-gamepad"></mat-icon>
+    </mat-checkbox>
+  </div>
+  <!-- <button mat-icon-button color="primary" (click)="OnChannleEvent()">
+      <mat-icon>pageview</mat-icon>
+    </button> -->
+
+</mat-grid-tile-header>

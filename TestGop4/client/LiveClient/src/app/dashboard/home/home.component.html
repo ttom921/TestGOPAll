@@ -1,0 +1,206 @@
+<p>
+  home works!
+</p>
+<mat-grid-list cols="4" rowHeight="200px" gutterSize="0.5em">
+  <mat-grid-tile style="background: red">
+    home Tile 1
+  </mat-grid-tile>
+  <mat-grid-tile style="background: green">
+    home Tile 2
+  </mat-grid-tile>
+  <mat-grid-tile style="background: blue">
+    home Tile 3
+  </mat-grid-tile>
+  <mat-grid-tile style="background: yellow">
+    home Tile 4
+  </mat-grid-tile>
+</mat-grid-list>
+<hr>
+
+
+
+
+
+<h3>設定Toolbar的樣式</h3>
+
+<mat-toolbar color="primary">這是primary的toolbar</mat-toolbar>
+<mat-toolbar color="accent">這是accent的toolbar</mat-toolbar>
+<mat-toolbar color="warn">這是warn的toolbar</mat-toolbar>
+
+<hr>
+<h3>多行的Toolbar</h3>
+
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>第一行Toolbar</span>
+    <span class="toolbar-seprator"></span>
+    <mat-icon>favorite</mat-icon>
+  </mat-toolbar-row>
+  <mat-toolbar-row>
+    第二行Toolbar
+    <span class="toolbar-seprator"></span>
+    <mat-icon>delete</mat-icon>
+  </mat-toolbar-row>
+</mat-toolbar>
+<hr>
+<button mat-button> mat-button -> Hello world!!</button>
+<br>
+<button mat-raised-button color="primary">Hello world!!</button>
+<br>
+這是第一個ICON<i class="material-icons">chat</i>
+<br>
+使用MatIcon的語法<mat-icon>chat</mat-icon>
+<hr>
+<div>
+  這是一般的ICON顏色
+  <mat-icon>person</mat-icon>
+</div>
+<div>
+  這是加上primary顏色的ICON
+  <mat-icon color="primary">thumb_up</mat-icon>
+</div>
+<div>
+  這是加上accent顏色的ICON
+  <mat-icon color="accent">info</mat-icon>
+</div>
+<div>
+  這是加上warn顏色的ICON
+  <mat-icon color="warn">warning</mat-icon>
+</div>
+<hr>
+<h3>在MatIcon中使用FontAwesome</h3>
+<div>
+  <mat-icon fontSet="fa" fontIcon="fa-clipboard-check"></mat-icon>
+
+  <mat-icon fontSet="fa" fontIcon="fa-thumbs-up"></mat-icon>
+  <mat-icon fontSet="fa" fontIcon="fa-thumbs-up" color="primary"></mat-icon>
+  <mat-icon fontSet="fa" fontIcon="fa-thumbs-up" color="accent"></mat-icon>
+  <mat-icon fontSet="fa" fontIcon="fa-thumbs-up" color="warn"></mat-icon>
+</div>
+<hr>
+<h3>扁平化按鈕(Flat Button)</h3>
+<div>
+  <button mat-button>我是按鈕</button>
+  <button mat-button color="primary">primary</button>
+  <button mat-button color="accent">accent</button>
+  <button mat-button color="warn">warn</button>
+  <button mat-button disabled>disabled</button>
+  <a mat-button>link</a>
+  <a mat-button disabled>disabled link</a>
+</div>
+<hr>
+<h3>凸起的按鈕(mat-raised-button)</h3>
+<div>
+  <button mat-raised-button>我是raised按鈕</button>
+  <button mat-raised-button color="primary">primary</button>
+  <button mat-raised-button color="accent">accent</button>
+  <button mat-raised-button color="warn">warn</button>
+  <button mat-raised-button disabled>disabled</button>
+  <a mat-raised-button>link</a>
+  <a mat-raised-button disabled>disabled link</a>
+  <br>
+  <button mat-raised-button color="primary">
+    <mat-icon>thumb_up</mat-icon>我有Icon
+  </button>
+  <br>
+  <button mat-raised-button color="primary">
+    <mat-icon>thumb_up</mat-icon>
+  </button>
+  <br>
+  <button mat-icon-button color="primary">
+    <mat-icon>thumb_up</mat-icon>
+  </button>
+  <mat-divider></mat-divider>
+
+  <button mat-raised-button mat-icon-button color="primary">
+    <mat-icon>thumb_up</mat-icon>
+  </button>
+</div>
+<hr>
+<h3>浮動的動作按鈕(mat-fab / mat-min-fab)</h3>
+<div>
+  <button mat-fab>
+    <mat-icon>thumb_up</mat-icon>
+  </button>
+  <button mat-fab color="primary">
+    <mat-icon>thumb_up</mat-icon>
+  </button>
+  <button mat-fab color="accent">
+    <mat-icon>thumb_up</mat-icon>
+  </button>
+  <button mat-fab color="warn">
+    <mat-icon>thumb_up</mat-icon>
+  </button>
+  <button mat-fab disabled>
+    <mat-icon>thumb_up</mat-icon>
+  </button>
+  <mat-divider></mat-divider>
+  <button mat-mini-fab>
+    <mat-icon>thumb_up</mat-icon>
+  </button>
+  <button mat-mini-fab color="primary">
+    <mat-icon>thumb_up</mat-icon>
+  </button>
+  <button mat-mini-fab color="accent">
+    <mat-icon>thumb_up</mat-icon>
+  </button>
+  <button mat-mini-fab color="warn">
+    <mat-icon>thumb_up</mat-icon>
+  </button>
+  <button mat-mini-fab disabled>
+    <mat-icon>thumb_up</mat-icon>
+  </button>
+</div>
+<hr>
+<h3>基本的ButtonToggle(mat-button-toggle)</h3>
+<mat-button-toggle>我是個開關</mat-button-toggle>
+<hr>
+<h3>搭配Button Togle Group(mat-button-toggle-group)</h3>
+<mat-button-toggle-group #formatAlignGroup="matButtonToggleGroup">
+  <!-- button toggle所代表的值-->
+  <mat-button-toggle value="left">
+    <mat-icon>format_align_left</mat-icon>
+  </mat-button-toggle>
+  <!-- 預設被選取-->
+  <mat-button-toggle value="center" checked="true">
+    <mat-icon>format_align_center</mat-icon>
+  </mat-button-toggle>
+  <mat-button-toggle value="right">
+    <mat-icon>format_align_right</mat-icon>
+  </mat-button-toggle>
+  <!--不允許選擇的button toggle-->
+  <mat-button-toggle value="justify" disabled>
+    <mat-icon>format_align_justify</mat-icon>
+  </mat-button-toggle>
+</mat-button-toggle-group>
+<div>對齊方式為:{{formatAlignGroup.value}}</div>
+
+<!--加上multiple, 則裡面的mat-button-toggle可以複選-->
+<!--加上vertical="true", 改變排𦕁方式-->
+<mat-button-toggle-group multiple vertical="true">
+  <mat-button-toggle value="bold" #buttonToggleBold>
+    <mat-icon>format_bold</mat-icon>
+  </mat-button-toggle>
+  <mat-button-toggle value="italic" checked="true" #buttonToggleItalic>
+    <mat-icon>format_italic</mat-icon>
+  </mat-button-toggle>
+  <mat-button-toggle value="underlined" checked="true" #buttonUnderlined>
+    <mat-icon>format_underlined</mat-icon>
+  </mat-button-toggle>
+</mat-button-toggle-group>
+<div>
+  粗體:{{buttonToggleBold.checked}}、斜體:{{buttonToggleItalic.checked}}、底線:{{buttonUnderlined.checked}}
+</div>
+<hr>
+<h3>漣漪效果(mat-ripple)</h3>
+<div class="demo-ripple-container" mat-ripple>
+</div>
+<mat-divider></mat-divider>
+<h4>mat-ripple的其他屬性</h4>
+<div class="demo-ripple-container" mat-ripple [matRippleCentered]="false" [matRippleDisabled]="false"
+  [matRippleUnbounded]="false" [matRippleRadius]="10" [matRippleColor]="'pink'"
+  [matRippleAnimation]="{enterDuration: 500,exitDuration:1000}">
+</div>
+<h4>從程式觸發漣漪的效果</h4>
+<div class="demo-ripple-container" mat-ripple #ripple>
+</div>

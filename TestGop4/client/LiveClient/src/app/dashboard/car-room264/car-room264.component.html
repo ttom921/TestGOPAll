@@ -1,0 +1,17 @@
+<div class="playervideo">
+  <span>{{title}}</span>
+  <span>
+    <button mat-icon-button color="primary" (click)="OnChannleEvent()">
+      <mat-icon>pageview</mat-icon>
+    </button>
+  </span>
+
+  <video class="jmuxerplayer" id="{{title}}" autoplay controls></video>
+</div>
+<!-- <mat-grid-tile-header>
+  <span>{{title}}</span>
+  <button mat-icon-button color="primary" (click)="OnChannleEvent()">
+    <mat-icon>pageview</mat-icon>
+  </button>
+
+</mat-grid-tile-header> -->
