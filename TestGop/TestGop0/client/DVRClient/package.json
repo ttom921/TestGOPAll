@@ -27,7 +27,7 @@
     "jmuxer": "^1.1.1",
     "jwt-decode": "^2.2.0",
     "rxjs": "~6.5.2",
-    "socket.io": "^2.2.0",
+    "socket.io": "^2.4.0",
     "tslib": "^1.10.0",
     "typescript": "^3.4.5",
     "zone.js": "~0.9.1"
